@@ -1,0 +1,26 @@
+### Validation 1 : dashboard Eureka
+GET http://localhost:8761/
+
+### 4.2 Créer un client
+POST http://localhost:8081/api/clients
+Content-Type: application/json
+
+{ "nom": "Salma", "age": 22 }
+
+###
+GET http://localhost:8081/api/clients
+
+### Validation 5 : test WebClient
+GET http://localhost:8082/api/test/client/1
+
+### 4.3 Créer une voiture liée au client
+POST http://localhost:8082/api/cars
+Content-Type: application/json
+
+{ "marque": "Toyota", "modele": "Yaris", "clientId": 1 }
+
+### 4.4 Voitures enrichies
+GET http://localhost:8082/api/cars
+
+###
+GET http://localhost:8082/api/cars/byClient/1
